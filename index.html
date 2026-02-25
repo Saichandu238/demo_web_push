@@ -618,12 +618,12 @@ window.addEventListener("load", function () {
 
         if (window.webPushManagerAPI) {
 
-            webPushManagerAPI.getChannelUUID()
-                .then(function(uuid) {
-                    console.log("Visitor ID:", uuid);
+            webPushManagerAPI.getVisitorId()
+                .then(function(visitorId) {
+                    console.log("Visitor ID:", visitorId);
                 })
                 .catch(function(err){
-                    console.log("Error getting UUID:", err);
+                    console.log("Error getting Visitor ID:", err);
                 });
 
         } else {
