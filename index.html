@@ -611,15 +611,19 @@ wpconfig='{
   "lazy":false
 }'
 ></script>
-    <script>
-document.addEventListener("DOMContentLoaded", function() {
+  <script>
+window.addEventListener("load", function () {
+    setTimeout(function () {
 
-    if (window.PushIOManager) {
-        console.log("PushIOManager available");
-    } else {
-        console.log("PushIOManager NOT available yet");
-    }
+        if (window.$p) {
+            $p.getChannelUUID().then(function(uuid) {
+                console.log("Visitor ID:", uuid);
+            });
+        } else {
+            console.log("SDK not ready yet");
+        }
 
+    }, 3000);
 });
 </script>
 </head>
