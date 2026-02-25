@@ -618,13 +618,8 @@ window.addEventListener("load", function () {
 
         if (window.webPushManagerAPI) {
 
-            webPushManagerAPI.getVisitorId()
-                .then(function(visitorId) {
-                    console.log("Visitor ID:", visitorId);
-                })
-                .catch(function(err){
-                    console.log("Error getting Visitor ID:", err);
-                });
+            var visitorId = webPushManagerAPI.getVisitorId();
+            console.log("Visitor ID:", visitorId);
 
         } else {
             console.log("Web Push API not ready yet");
