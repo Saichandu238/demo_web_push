@@ -611,19 +611,27 @@ wpconfig='{
   "lazy":false
 }'
 ></script>
-  <script>
+<script>
 window.addEventListener("load", function () {
+
     setTimeout(function () {
 
         if (window.$p) {
-            $p.getChannelUUID().then(function(uuid) {
-                console.log("Visitor ID:", uuid);
-            });
+
+            $p.getChannelUUID()
+              .then(function(uuid) {
+                  console.log("Visitor ID:", uuid);
+              })
+              .catch(function(err){
+                  console.log("Error getting UUID:", err);
+              });
+
         } else {
             console.log("SDK not ready yet");
         }
 
-    }, 3000);
+    }, 5000); // wait 5 seconds to be safe
+
 });
 </script>
 </head>
