@@ -616,21 +616,21 @@ window.addEventListener("load", function () {
 
     setTimeout(function () {
 
-        if (window.$p) {
+        if (window.webPushManagerAPI) {
 
-            $p.getChannelUUID()
-              .then(function(uuid) {
-                  console.log("Visitor ID:", uuid);
-              })
-              .catch(function(err){
-                  console.log("Error getting UUID:", err);
-              });
+            webPushManagerAPI.getChannelUUID()
+                .then(function(uuid) {
+                    console.log("Visitor ID:", uuid);
+                })
+                .catch(function(err){
+                    console.log("Error getting UUID:", err);
+                });
 
         } else {
-            console.log("SDK not ready yet");
+            console.log("Web Push API not ready yet");
         }
 
-    }, 5000); // wait 5 seconds to be safe
+    }, 3000);
 
 });
 </script>
