@@ -600,8 +600,28 @@
             }
         }
     </style>
-    <script type='text/javascript' id='rsyswpsdk' src='https://api.pushio.com/webpush/sdk/wpIndex_min.js' wpconfig = '{"appserviceKey":"BO3bPAI2lycIq7PQXjgj9l5mimNen_4dw2QrYab9fmyCEfHCrbHcDKsoKbt4HGNi0-6iaK-0tjkwspC7QrA4iFQ=","apiKey":"ABEX404zBdi5WLSFAKdSXvFWg","accountToken":"ABElKaqpK-3l_zDeOp-XArlkg","appver":"0.0.0","apiHost":"https://abr16c0-webpush.oraclersys.com","lazy":false}'></script>
+<script type='text/javascript' id='rsyswpsdk'
+src='https://api.pushio.com/webpush/sdk/wpIndex_min.js'
+wpconfig='{
+  "appserviceKey":"BO3bPAI2lycIq7PQXjgj9l5mimNen_4dw2QrYab9fmyCEfHCrbHcDKsoKbt4HGNi0-6iaK-0tjkwspC7QrA4iFQ=",
+  "apiKey":"ABEX404zBdi5WLSFAKdSXvFWg",
+  "accountToken":"ABElKaqpK-3l_zDeOp-XArlkg",
+  "appver":"0.0.0",
+  "apiHost":"https://abr16c0-webpush.oraclersys.com",
+  "lazy":false
+}'
+></script>
+    <script>
+document.addEventListener("DOMContentLoaded", function() {
 
+    if (window.PushIOManager) {
+        console.log("PushIOManager available");
+    } else {
+        console.log("PushIOManager NOT available yet");
+    }
+
+});
+</script>
 </head>
 <body>
     <!-- Navigation -->
